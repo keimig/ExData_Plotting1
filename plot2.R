@@ -34,9 +34,8 @@ plot2 <- function() {
   str(power_days)
   ## plot 2
   setwd("~/jhu_ds_track/4_exdata/ExData_Plotting1")
-  par(mfrow=c(1,1),mar=c(4,4,2,2) )
-  with(power_days,plot(datetime,Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)"))
   png(file="plot2.png",width=480,height=480,units="px")
+  par(mfrow=c(1,1),mar=c(4,4,2,2) )
   with(power_days,plot(datetime,Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)"))
   dev.off()
   

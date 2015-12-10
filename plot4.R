@@ -33,6 +33,7 @@ plot4 <- function() {
   head(power_days)
   str(power_days)
   setwd("~/jhu_ds_track/4_exdata/ExData_Plotting1")
+  png(file="plot4.png",width=480,height=480,units="px")
   par(mfrow=c(2,2),mar=c(4,4,2,2) )
   ## plot r1c1
   with(power_days,plot(datetime,Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)"))
@@ -43,22 +44,7 @@ plot4 <- function() {
   with(power_days,points(datetime,Sub_metering_1,type="l",col="black"))
   with(power_days,points(datetime,Sub_metering_2,type="l",col="red"))
   with(power_days,points(datetime,Sub_metering_3,type="l",col="blue"))
-  legend("topright",border="",lwd=1,col=c("black","blue","red"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
-  ## plot r2c2
-  with(power_days,plot(datetime,Global_reactive_power,type="l",xlab="datetime",ylab="Global_reactive_power"))
-  
-  png(file="plot4.png",width=560,height=560,units="px")
-  par(mfrow=c(2,2),mar=c(4,4,2,2) )
-  ## plot r1c1
-  with(power_days,plot(datetime,Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)"))
-  ## plot r1c2
-  with(power_days,plot(datetime,Voltage,type="l",xlab="datetime",ylab="Voltage"))
-  ## plot r2c1
-  with(power_days,plot(datetime,Sub_metering_1,type="n",xlab="",ylab="Energy sub metering"))
-  with(power_days,points(datetime,Sub_metering_1,type="l",col="black"))
-  with(power_days,points(datetime,Sub_metering_2,type="l",col="red"))
-  with(power_days,points(datetime,Sub_metering_3,type="l",col="blue"))
-  legend("topright",border="",lwd=1,col=c("black","blue","red"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
+  legend("topright",border="",lwd=1,cex=0.8,col=c("black","blue","red"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
   ## plot r2c2
   with(power_days,plot(datetime,Global_reactive_power,type="l",xlab="datetime",ylab="Global_reactive_power"))
   dev.off()

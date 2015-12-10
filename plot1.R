@@ -29,14 +29,13 @@ plot1 <- function() {
   
   power_days<-power[Date=='2007-02-01' | Date=='2007-02-02']
   rm(power) 
-  power_days<<-mutate(power_daysplot,datetime=ymd_hms(paste(Date,Time,sep="")))
+  power_days<<-mutate(power_days,datetime=ymd_hms(paste(Date,Time,sep="")))
   head(power_days)
   str(power_days)
   ## plot 1
   setwd("~/jhu_ds_track/4_exdata/ExData_Plotting1")
-  par(mfrow=c(1,1),mar=c(4,4,2,2) )
-  hist(power_days$Global_active_power,col="red",xlab="Global Active Power (kilowatts)",main="Global Active Power")
   png(file="plot1.png",width=480,height=480,units="px")
+  par(mfrow=c(1,1),mar=c(4,4,2,2) )
   hist(power_days$Global_active_power,col="red",xlab="Global Active Power (kilowatts)",main="Global Active Power")
   dev.off()
   

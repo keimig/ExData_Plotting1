@@ -35,13 +35,8 @@ plot3 <- function() {
   ## plot 2
   setwd("~/jhu_ds_track/4_exdata/ExData_Plotting1")
   par(mfrow=c(1,1),mar=c(4,4,2,2) )
-  with(power_days,plot(datetime,Sub_metering_1,type="n",xlab="",ylab="Energy sub metering"))
-  with(power_days,points(datetime,Sub_metering_1,type="l",col="black"))
-  with(power_days,points(datetime,Sub_metering_2,type="l",col="red"))
-  with(power_days,points(datetime,Sub_metering_3,type="l",col="blue"))
-  legend("topright",lwd=1,col=c("black","blue","red"),legend=c("Sub_metering_1","Sub_metering_2","Sub_metering_3"))
-  ##
   png(file="plot3.png",width=480,height=480,units="px")
+  par(mfrow=c(1,1),mar=c(4,4,2,2) )
   with(power_days,plot(datetime,Sub_metering_1,type="n",xlab="",ylab="Energy sub metering"))
   with(power_days,points(datetime,Sub_metering_1,type="l",col="black"))
   with(power_days,points(datetime,Sub_metering_2,type="l",col="red"))
