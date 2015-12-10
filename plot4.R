@@ -47,7 +47,7 @@ plot4 <- function() {
   ## plot r2c2
   with(power_days,plot(datetime,Global_reactive_power,type="l",xlab="datetime",ylab="Global_reactive_power"))
   
-  png(file="plot4.png",width=960,height=960,units="px")
+  png(file="plot4.png",width=560,height=560,units="px")
   par(mfrow=c(2,2),mar=c(4,4,2,2) )
   ## plot r1c1
   with(power_days,plot(datetime,Global_active_power,type="l",xlab="",ylab="Global Active Power (kilowatts)"))
